@@ -1,7 +1,7 @@
 //imports
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
-const withAuth = require("../../utils/");
+const withAuth = require("../../utils/authentication");
 
 //get all users (GET)
 router.get("/", (req, res) => {
