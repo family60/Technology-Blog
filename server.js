@@ -4,10 +4,10 @@ const express = require("express");
 const expressHandleBars = require("express-handlebars");
 //important db and routing imports
 const routes = require("./controllers");
-const sequilize = require("./config/connection");
+const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
 const session = require("express-session");
-const sequilizeStore = require("connect-session-sequelize")(session.Store);
+const sequelizeStore = require("connect-session-sequelize")(session.Store);
 //initialize app and setup port
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,8 +17,8 @@ const sess = {
     resave: false,
     saveUninitialized: true,
     cookie: { originalMaxAge: 600000 },
-    Store: new sequilizeStore({
-        db: sequilize
+    Store: new sequelizeStore({
+        db: sequelize
     })
   };
 //start handle-bars engine

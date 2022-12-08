@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     });
 });
 //get one user by id (GET)
-router.get("/:id", (req, res => {
+router.get("/:id", (req, res) => {
     User.findOne({
         attributes: { exclude: ["password"] },
         where: {
@@ -44,7 +44,7 @@ router.get("/:id", (req, res => {
         res.status(500).json(err);
         console.log(err);
     });
-}));
+});
 
 //create new user (POST)
 router.post("/", (req, res) => {
